@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Player and Team Analysis</title>
+</head>
+
+<body>
+    <header>
+        <h1>Player Analysis</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html" onclick="loadContent('about.html', 'About This Project')">About This Project</a></li>
+            <li><a href="performance.html" onclick="loadContent('performance.html', 'Club Performance History and Finances')">Club Performance History and Finances</a></li>
+            <li><a href="analysis.html" onclick="loadContent('analysis.html', 'Player and Team Analysis')">Player and Team Analysis</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <h2>Analysis of Top Performers</h2>
+        <section>
+            These are the highest rated players in every team. The blue region represents the stats from last season and the green 
+            region represesnts the stats from the current season.The ratings of the players correspond to a variety of statistics, 
+            however, the 4 statistics shown in the radar charts are some of the most important. Something you may notice is that 
+            some players grew a lot more from the last season and often these players are a part of a team which are 'over performing'.
+        </section>
+        <label for="imageSelector">Select a Player:</label>
+        <select id="imageSelector" onchange="changeImage()">
+            <option value="Saka Rated.png">Bukayo Saka</option>
+            <option value="Boniface Rating.png">Victor Boniface</option>
+            <option value="Bellingham Rated.png">Jude Bellingham</option>
+            <option value="Aleix Garcia copy.png">Aleix Garcia</option>
+            <option value="Doku Rated.png">Jeremy Doku</option>
+            <option value="Guirassy Rated.png"> Serhou Guirassy</option>
+            <option value="Watkins Rated.png"> Ollie Watkins</option>
+            <option value="Sane Rated.png"> Leroy Sane</option>
+        </select>
+
+        <div id="imageContainer">
+            <img id="selectedImage" src="radar_charts/Saka Rated.png" alt="Selected Image">
+        </div>
+
+    </section>
+
+    <section>
+        <h2>Analysis of Team Defenses</h2>
+        <iframe src="https://public.tableau.com/views/ScatterPlot_17018369751720/Sheet1?:showVizHome=no&:embed=true" width="100%" height="800"></iframe>
+        <br> There will be a paragraph explaing this chart here
+        </br>
+    </section>
+
+    <footer>
+        <p>Aarya and Timor Data Visualization Final Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function changeImage() {
+            var imageSelector = document.getElementById("imageSelector");
+            var selectedImage = document.getElementById("selectedImage");
+            var imageContainer = document.getElementById("imageContainer");
+
+            var selectedOption = imageSelector.options[imageSelector.selectedIndex];
+            var imagePath = "radar_charts/" + selectedOption.value;
+
+            selectedImage.src = imagePath;
+            selectedImage.alt = "Selected Image";
+        }
+    </script>
+</body>
+
+</html>
