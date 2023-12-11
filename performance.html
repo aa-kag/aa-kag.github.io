@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>About This Project</title>
+</head>
+
+<body>
+    <header>
+        <h1>Historical Performances and Financial Comparasions</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html" onclick="loadContent('about.html', 'About This Project')">About This Project</a></li>
+            <li><a href="performance.html" onclick="loadContent('performance.html', 'Club Performance History and Finances')">Club Performance History and Finances</a></li>
+            <li><a href="analysis.html" onclick="loadContent('analysis.html', 'Player and Team Analysis')">Player and Team Analysis</a></li>
+        </ul>
+    </nav>
+        
+
+    <section id="content">
+        <h2>Historical Performances</h2>
+
+        
+        <figure>
+            <figcaption>
+                <br>This chart shows the position each team finished over the last 7 seasons and their current position so far this season.
+            It is important to note that if a team has a gap in their chart they have been relegated for the seasons they do not appear in
+                the chart. For example Girona was in the second division for the 2016/17, 2019/20, 2020/21, and 2021/22 seasons.</br>
+            </figcaption>
+            
+
+            <div class='tableauPlaceholder' id='viz1702315466055' style='position: relative'>
+                <noscript><a href='#'><img alt='Club Historical Domestic Performance' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bu&#47;BumpChart_17023154422040&#47;Sheet1&#47;1_rss.png' style='border: none' /></a></noscript>
+                <object class='tableauViz' style='display:none;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                    <param name='embed_code_version' value='3' /> <param name='site_root' value='' />
+                    <param name='name' value='BumpChart_17023154422040&#47;Sheet1' />
+                    <param name='tabs' value='no' /><param name='toolbar' value='yes' />
+                    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bu&#47;BumpChart_17023154422040&#47;Sheet1&#47;1.png' />
+                    <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' />
+                    <param name='display_count' value='yes' /><param name='language' value='en-US' />
+                    <param name='filter' value='publish=yes' />
+                </object>
+            </div>
+            <script type='text/javascript'>
+                var divElement = document.getElementById('viz1702315466055');
+                var vizElement = divElement.getElementsByTagName('object')[0];
+                vizElement.style.width='100%';
+                vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+                var scriptElement = document.createElement('script');
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            </script>
+        </figure>
+
+
+
+        <h2>Finance Comparasions</h2>
+
+        <figure>
+            <img src="financeCharts/Clubvalues.png" alt="Financial Comparasions">
+            <figcaption>
+            This chart shows the difference in club value of the teams. Club value dictates
+            what types of coaches, staff, training facilities, and players a team can afford. The greater a club's value the more money they
+            are permitted to spend in the transfer market. The chart shows a vast divide between the big and small teams. It demonstrates
+            one of the reasons big clubs are able to perform at such a high level. 
+            </figcaption>
+        </figure>
+        <figure>
+            <img src="financeCharts/Netspend.png" alt="Finance Table">
+            <figcaption>
+                This chart shows the spending habits on new players of the 8 teams selected for our analysis. 
+                It is can be seen that the established teams are able to spend more money on players without offloading their current players.
+                Smaller teams such as Stuttgart are not in positions where they can financially afford to spend on players without selling some of 
+                their current players. In addition, smaller teams tend to be forced to sell their best players to established teams which is why 
+                they struggle and often only find success when they are over performing.
+            </figcaption>
+        </figure>
+    </section>
+
+    <footer>
+        <p>Aarya and Timor Data Visualization Final Project</p>
+    </footer>
+</body>
+
+</html>
