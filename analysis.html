@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Player and Team Analysis</title>
+</head>
+
+<body>
+    <header>
+        <h1>Player Analysis</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html" onclick="loadContent('about.html', 'About This Project')">About This Project</a></li>
+            <li><a href="performance.html" onclick="loadContent('performance.html', 'Club Performance History and Finances')">Club Performance History and Finances</a></li>
+            <li><a href="analysis.html" onclick="loadContent('analysis.html', 'Player and Team Analysis')">Player and Team Analysis</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <h2>Analysis of Top Performers</h2>
+        <section>
+            These are the highest rated players in every team. The blue region represents the stats from last season and the green 
+            region represesnts the stats from the current season. Note that the overall ratings of the players correspond to a variety of statistics, 
+            but the 4 statistics shown in the radar charts are some of the most important. 
+            The farther out a region stretches the better the player performs in that category. The larger the player's region
+            in the chart the better their overall performance and more well rounded that player is.
+            Something you may notice is that 
+            some players grew a lot more from the last season and often these players are a part of teams that are 'overperforming'. Additionally,
+            the top rated players were all attacking minded, which is why we created a separate chart breaking down the important defensive statistics,
+            as you can see below.
+
+        </section>
+        <label for="imageSelector">Select a Player:</label>
+        <select id="imageSelector" onchange="changeImage()">
+            <option value="Saka Rated.png">Bukayo Saka</option>
+            <option value="Boniface Rating.png">Victor Boniface</option>
+            <option value="Bellingham Rated.png">Jude Bellingham</option>
+            <option value="Aleix Garcia copy.png">Aleix Garcia</option>
+            <option value="Doku Rated.png">Jeremy Doku</option>
+            <option value="Guirassy Rated.png"> Serhou Guirassy</option>
+            <option value="Watkins Rated.png"> Ollie Watkins</option>
+            <option value="Sane Rated.png"> Leroy Sane</option>
+        </select>
+
+        <div id="imageContainer">
+            <img id="selectedImage" src="radar_charts/Saka Rated.png" alt="Selected Image">
+        </div>
+
+    </section>
+
+    <section>
+        <h2>Analysis of Team Defenses</h2>
+    <figure>
+        <div class='tableauPlaceholder' id='viz1702409436131' style='position: relative'>
+            <noscript><a href='#'><img alt='Top Defensive Player Analysis ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;YR&#47;YRDZJWSQW&#47;1_rss.png' style='border: none' /></a></noscript>
+            <object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                <param name='embed_code_version' value='3' /> 
+                <param name='path' value='shared&#47;YRDZJWSQW' /> 
+                <param name='toolbar' value='yes' />
+                <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;YR&#47;YRDZJWSQW&#47;1.png' /> 
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='language' value='en-US' />
+            </object>
+        </div>
+            <script type='text/javascript'>
+            var divElement = document.getElementById('viz1702409436131');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            </script>
+     </figure>
+        <section>
+            In this chart we selected the top 3 defensive players in each team and charted how often they attempted tackles versus how successful the player's tackles are. The chart seeks to demonstrate the general defensive trends of the larger versus smaller teams. You can see that in general smaller teams attempted more tackles and strayed more frequently towards the right half of the graph. This trend is expected because smaller teams tend to be more on the defensive side while established teams tend to dominate the ball possession. An interesting demonstration of the plot is that the top 3 Real Madrid players were on the right half (attempting more tackles and interceptions) of the chart even though those players are midfielders indicating that often times they win the ball back before their defenders even need to step in. This trend is generally very common with bigger clubs (especially ones whose tactics dictate the majority of ball possession).
+        </section>
+    </section>
+
+    <footer>
+        <p>Aarya and Timor Data Visualization Final Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function changeImage() {
+            var imageSelector = document.getElementById("imageSelector");
+            var selectedImage = document.getElementById("selectedImage");
+            var imageContainer = document.getElementById("imageContainer");
+
+            var selectedOption = imageSelector.options[imageSelector.selectedIndex];
+            var imagePath = "radar_charts/" + selectedOption.value;
+
+            selectedImage.src = imagePath;
+            selectedImage.alt = "Selected Image";
+        }
+    </script>
+</body>
+
+</html>
